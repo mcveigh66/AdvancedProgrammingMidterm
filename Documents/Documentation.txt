@@ -1,0 +1,54 @@
+Question 1 User docs 
+
+What this is:
+Basically, this is a command line java app I built to keep track of everything in a pharmacy. It handles doctors, patients, medications, and active prescriptions. I used OOP principles to link all these different pieces together so they talk to each other cleanly and dont mess up the inventory or tracking. 
+
+How the classes work:
+I split the code into these classes to avoid re writing: 
+* Person - This is the parent class. It holds the basic info everyone has. ID, name, age, and phone number. 
+* Patient - Inherits from Person, but is also tracks the patients specific medical history and their active prescription. 
+* Doctor - This also inherits from Person, but adds medical professional and keeps a running ist of all the patients assigned to them. 
+
+How to run it: 
+1. Install Java on your computer 
+
+2. Open up your terminal, cd into this folder, and run this command to compile everything at once: javac Main.java
+
+3. Run this command to start up the interactive menu: java Main 
+
+How to clone and run code from github: 
+1. Open up your terminal or command prompt.
+
+2. Clone this repository to your computer by running:
+git clone <PASTE_YOUR_GITHUB_REPO_URL_HERE>
+
+3. Move into the project folder:
+cd PharmacySystem
+
+4. Compile all 7 files at the same time:
+javac Main.java
+
+5. Run the app to open the menu:
+java Main
+
+Question 2 Developer docs
+
+How the files are split up: 
+I broke the app into 7 files to keep it cleaner 
+* Person.java - Parent class for basic info
+* Patient.java - Patient class (extends Person)
+* Doctor.java - Doctor class (extends person)
+* Medication.java - Handles drug inventory, names and doses 
+* Prescription.java - Links a doctor, patient and drug together
+* MedicationTrackingSystem.java - The actual code running the backend  
+* Main.java - Runs the loops for the console menu 
+
+The Entity-Relationship schema 
+If this app were connected to a real backend database like PostgreSQL instead of just storing data in volatile memory, the tables would look like this: 
+* Doctors (doctor_id[PK], name, age, phone_number, specialization)
+* Patients (patient_id [PK], name, age, phone_number)
+* Medications (medication_id [PK], name, dose, quantity_in_stock, expiry_date)
+* Prescriptions(prescription_id [PK], doctor_id [FK], patient_id [FK],medication_id [FK], date_issued, expiry_date)
+
+I exported a visual ERD diagram from Eraser.io, its included in the documents folder. 
+
