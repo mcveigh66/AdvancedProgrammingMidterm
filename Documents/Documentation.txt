@@ -23,7 +23,7 @@ How to clone and run code from github:
 git clone <PASTE_YOUR_GITHUB_REPO_URL_HERE>
 
 3. Move into the project folder:
-cd PharmacySystem
+code . 
 
 4. Compile all 7 files at the same time:
 javac Main.java
